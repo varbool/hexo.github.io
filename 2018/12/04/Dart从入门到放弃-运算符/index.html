@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Flutter,Dart,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。  在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。下面我们先汇总下Dart中的常见操作符：    描述 操作符     一元后置操作符 expr++   expr–">
+<meta name="keywords" content="Flutter,Dart">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dart从入门到放弃-运算符">
+<meta property="og:url" content="varbool.com/2018/12/04/Dart从入门到放弃-运算符/index.html">
+<meta property="og:site_name" content="VarBool">
+<meta property="og:description" content="今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。  在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。下面我们先汇总下Dart中的常见操作符：    描述 操作符     一元后置操作符 expr++   expr–">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-10T05:49:29.893Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dart从入门到放弃-运算符">
+<meta name="twitter:description" content="今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。  在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。下面我们先汇总下Dart中的常见操作符：    描述 操作符     一元后置操作符 expr++   expr–">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="varbool.com/2018/12/04/Dart从入门到放弃-运算符/">
+
+
+
+
+
+  <title>Dart从入门到放弃-运算符 | VarBool</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">VarBool</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">True or False</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="varbool.com/2018/12/04/Dart从入门到放弃-运算符/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VarBool">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Dart从入门到放弃-运算符</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-04T21:47:35+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。</p>
+</blockquote>
+<p>在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。<br>Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。<br>下面我们先汇总下Dart中的常见操作符：</p>
+<table>
+<thead>
+<tr>
+<th>描述</th>
+<th>操作符</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一元后置操作符</td>
+<td>expr++   expr–  ()  []  .   ?.</td>
+</tr>
+<tr>
+<td>一元前置操作符</td>
+<td>-expr    !expr   ~expr   ++expr  –expr</td>
+</tr>
+<tr>
+<td>乘除运算</td>
+<td>*  /   %   ~/</td>
+</tr>
+<tr>
+<td>加减运算</td>
+<td>+   -</td>
+</tr>
+<tr>
+<td>移位运算</td>
+<td>&lt;&lt;      &gt;&gt;</td>
+</tr>
+<tr>
+<td>按位与</td>
+<td>&amp;</td>
+</tr>
+<tr>
+<td>按位异或</td>
+<td>^</td>
+</tr>
+<tr>
+<td>按位或</td>
+<td>&#124;</td>
+</tr>
+<tr>
+<td>关系和类型测试</td>
+<td>&gt;=   &gt;    &lt;=     &lt;   as  is  is!</td>
+</tr>
+<tr>
+<td>相等</td>
+<td>==     !=</td>
+</tr>
+<tr>
+<td>逻辑与</td>
+<td>&amp;&amp;</td>
+</tr>
+<tr>
+<td>逻辑或</td>
+<td>&#124;&#124;</td>
+</tr>
+<tr>
+<td>是否为null</td>
+<td>??</td>
+</tr>
+<tr>
+<td>天健判断(三元运算)</td>
+<td>expr1 ? expr2 : expr3</td>
+</tr>
+<tr>
+<td>级联</td>
+<td>··</td>
+</tr>
+<tr>
+<td>赋值</td>
+<td>=      *=      /=      ~/=     %=      +=      -=      &lt;&lt;=     &gt;&gt;=     &amp;=      ^=</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<p>我们先列举一些Dart中常见的运算符表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a++</span><br><span class="line">a + b</span><br><span class="line">a = b</span><br><span class="line">a == b</span><br><span class="line">c ? a : b</span><br><span class="line">a is T</span><br></pre></td></tr></table></figure></p>
+<p>上面的表达式中，每一个运算符的优先级都是高于排在自己后面的运算符的，比如<code>a == b ? c : d</code>会优先去判断a是否等于b，最后才能得出值是c还是d。</p>
+<h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p>Dart中常用的算术运算符有下表几种：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+</td>
+<td>加法</td>
+</tr>
+<tr>
+<td>-</td>
+<td>减法</td>
+</tr>
+<tr>
+<td>-expr</td>
+<td>一元减号，也称为否定</td>
+</tr>
+<tr>
+<td>*</td>
+<td>乘法</td>
+</tr>
+<tr>
+<td>/</td>
+<td>除法</td>
+</tr>
+<tr>
+<td>~/</td>
+<td>取模运算</td>
+</tr>
+<tr>
+<td>%</td>
+<td>取余运算</td>
+</tr>
+</tbody>
+</table>
+<p>列如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">assert(2 + 3 == 5);</span><br><span class="line">assert(2 - 3 == -1);</span><br><span class="line">assert(2 * 3 == 6);</span><br><span class="line">assert(5 / 2 == 2.5); // Result is a double</span><br><span class="line">assert(5 ~/ 2 == 2); // Result is an int</span><br><span class="line">assert(5 % 2 == 1); // Remainder</span><br><span class="line"></span><br><span class="line">assert(&apos;5/2 = $&#123;5 ~/ 2&#125; r $&#123;5 % 2&#125;&apos; == &apos;5/2 = 2 r 1&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>Dart还支持前缀和后缀递增递减运算符：</p>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>++var</td>
+<td>var = var + 1(表达式的值var+1)</td>
+</tr>
+<tr>
+<td>var++</td>
+<td>var = var + 1(表达式的值是var)</td>
+</tr>
+<tr>
+<td>–var</td>
+<td>var = var - 1(表达式的值是var - 1)</td>
+</tr>
+<tr>
+<td>var–</td>
+<td>var = var -1(表达式的值是var)</td>
+</tr>
+</tbody>
+</table>
+<p>列如:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">var a, b;</span><br><span class="line"></span><br><span class="line">a = 0;</span><br><span class="line">b = ++a; // Increment a before b gets its value.</span><br><span class="line">assert(a == b); // 1 == 1</span><br><span class="line"></span><br><span class="line">a = 0;</span><br><span class="line">b = a++; // Increment a AFTER b gets its value.</span><br><span class="line">assert(a != b); // 1 != 0</span><br><span class="line"></span><br><span class="line">a = 0;</span><br><span class="line">b = --a; // Decrement a before b gets its value.</span><br><span class="line">assert(a == b); // -1 == -1</span><br><span class="line"></span><br><span class="line">a = 0;</span><br><span class="line">b = a--; // Decrement a AFTER b gets its value.</span><br><span class="line">assert(a != b); // -1 != 0</span><br></pre></td></tr></table></figure></p>
+<h2 id="相等和关系运算符"><a href="#相等和关系运算符" class="headerlink" title="相等和关系运算符"></a>相等和关系运算符</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==</td>
+<td>相等</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>不等</td>
+</tr>
+<tr>
+<td>&gt;</td>
+<td>大于</td>
+</tr>
+<tr>
+<td>&lt;</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>&gt;=</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>&lt;=</td>
+<td>小于等于</td>
+</tr>
+</tbody>
+</table>
+<p>下面我们上栗子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">assert(2 == 2);</span><br><span class="line">assert(2 != 3);</span><br><span class="line">assert(3 &gt; 2);</span><br><span class="line">assert(2 &lt; 3);</span><br><span class="line">assert(3 &gt;= 3);</span><br><span class="line">assert(2 &lt;= 3);</span><br></pre></td></tr></table></figure></p>
+<h2 id="类型测试操作符"><a href="#类型测试操作符" class="headerlink" title="类型测试操作符"></a>类型测试操作符</h2><table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>as</td>
+<td>形态转换</td>
+</tr>
+<tr>
+<td>is</td>
+<td>是否为某种类型</td>
+</tr>
+<tr>
+<td>is!</td>
+<td>是否不为某种类型</td>
+</tr>
+</tbody>
+</table>
+<p>上安利：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">if (emp is Person) &#123;</span><br><span class="line">  // Type check</span><br><span class="line">  emp.firstName = &apos;Bob&apos;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">(emp as Person).firstName = &apos;Bob&apos;;</span><br></pre></td></tr></table></figure></p>
+<h2 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h2><p>在Dart中我们可以使用=来赋值，如果我们仅仅为非空的变量赋值可以使用??=操作符.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// Assign value to a</span><br><span class="line">a = value;</span><br><span class="line">// Assign value to b if b is null; otherwise, b stays the same</span><br><span class="line">///仅仅在b为空的情况下b被赋值value否则b的值不变</span><br><span class="line">b ??= value;</span><br></pre></td></tr></table></figure></p>
+<p>除了=操作符来赋值之外，Dart还提供了很多复合赋值操作符，如+=将操作和赋值合并在一起构成复合赋值操作符:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>-=</td>
+<td>/=</td>
+<td>%=</td>
+<td>&gt;&gt;=</td>
+<td>^=</td>
+</tr>
+<tr>
+<td>+=</td>
+<td>*=</td>
+<td>~/=</td>
+<td>&lt;&lt;=</td>
+<td>&amp;=</td>
+<td>&#124;=</td>
+</tr>
+</tbody>
+</table>
+<p>我们用一个表格来更简化的理解复合赋值运算符的工作原理：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>复合赋值运算</th>
+<th>等价表达式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>假如操作符为op</td>
+<td>a op = b</td>
+<td>a = a op b</td>
+</tr>
+<tr>
+<td>示例</td>
+<td>a += b</td>
+<td>a = a + b</td>
+</tr>
+</tbody>
+</table>
+<p>下面上个栗子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var a = 2; // Assign using =</span><br><span class="line">a *= 3; // Assign and multiply: a = a * 3</span><br><span class="line">assert(a == 6);</span><br></pre></td></tr></table></figure></p>
+<h2 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!expr</td>
+<td>对!后的表达式结果取反</td>
+</tr>
+<tr>
+<td>&#124;&#124;</td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td>&amp;&amp;</td>
+<td>逻辑与（且）</td>
+</tr>
+</tbody>
+</table>
+<p>举个例子:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (!done &amp;&amp; (col == 0 || col == 3)) &#123;</span><br><span class="line">  // ...Do something...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="位和移位运算"><a href="#位和移位运算" class="headerlink" title="位和移位运算"></a>位和移位运算</h2><blockquote>
+<p>这部分的类容在开发中几乎很少使用，我们就不学习了。</p>
+</blockquote>
+<h2 id="条件表达式"><a href="#条件表达式" class="headerlink" title="条件表达式"></a>条件表达式</h2><p>条件表达式最主要的作用就是简化代码很多需要if-else语句的表达式：<br><code>condition ? expr1 : expr2       // 如果条件为真则计算expr1，或者计算expr2</code><br><code>expr1 ?? expr2 // 如果expr1是非空则返回expr1，否则计算expr2</code><br>举例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var visibility = isPublic ? &apos;public&apos; : &apos;private&apos;;</span><br><span class="line">String playerName(String name) =&gt; name ?? &apos;Guest&apos;;</span><br></pre></td></tr></table></figure></p>
+<p>上面的栗子还可以用其他方式来写，但是非常的不简洁:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// Slightly longer version uses ?: operator.</span><br><span class="line">String playerName(String name) =&gt; name != null ? name : &apos;Guest&apos;;</span><br><span class="line"></span><br><span class="line">// Very long version uses if-else statement.</span><br><span class="line">String playerName(String name) &#123;</span><br><span class="line">  if (name != null) &#123; </span><br><span class="line">    return name;</span><br><span class="line">  &#125; else &#123;</span><br><span class="line">    return &apos;Guest&apos;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="级联表示法"><a href="#级联表示法" class="headerlink" title="级联表示法 (..)"></a>级联表示法 (..)</h2><p>级联(..)允许我们在同一个对象上创建一个操作序列，除了函数调用之外，我们还可以访问同一个对象上的字段。通常情况下可以使我们省去创建临时变量的步骤，使我们更为流畅的写代码。<br>严格意义上来说，级联表示法不是运算符，只是Dart语法的一部分。<br>栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">querySelector(&apos;#confirm&apos;) // Get an object.</span><br><span class="line">  ..text = &apos;Confirm&apos; // Use its members.</span><br><span class="line">  ..classes.add(&apos;important&apos;)</span><br><span class="line">  ..onClick.listen((e) =&gt; window.alert(&apos;Confirmed!&apos;));</span><br></pre></td></tr></table></figure></p>
+<p>等价于:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var button = querySelector(&apos;#confirm&apos;);</span><br><span class="line">button.text = &apos;Confirm&apos;;</span><br><span class="line">button.classes.add(&apos;important&apos;);</span><br><span class="line">button.onClick.listen((e) =&gt; window.alert(&apos;Confirmed!&apos;));</span><br></pre></td></tr></table></figure></p>
+<p>我们也可以嵌套级联操作:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">final addressBook = (AddressBookBuilder()</span><br><span class="line">      ..name = &apos;jenny&apos;</span><br><span class="line">      ..email = &apos;jenny@example.com&apos;</span><br><span class="line">      ..phone = (PhoneNumberBuilder()</span><br><span class="line">            ..number = &apos;415-555-0100&apos;</span><br><span class="line">            ..label = &apos;home&apos;)</span><br><span class="line">          .build())</span><br><span class="line">    .build();</span><br></pre></td></tr></table></figure></p>
+<p>在返回实际对象的函数上构造级联需要特别注意，我们不能在一个void结果上继续构建级联操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var sb = StringBuffer();</span><br><span class="line">sb.write(&apos;foo&apos;)</span><br><span class="line">  ..write(&apos;bar&apos;); // Error: method &apos;write&apos; isn&apos;t defined for &apos;void&apos;.</span><br></pre></td></tr></table></figure></p>
+<h2 id="其他运算符"><a href="#其他运算符" class="headerlink" title="其他运算符"></a>其他运算符</h2><table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>()</td>
+<td>功能函数</td>
+<td>表示一个函数的调用</td>
+</tr>
+<tr>
+<td>[]</td>
+<td>访问列表</td>
+<td>引用列表中指定索引处的值</td>
+</tr>
+<tr>
+<td>.</td>
+<td>访问成员</td>
+<td>表示表达式的属性</td>
+</tr>
+<tr>
+<td>?.</td>
+<td>根据条件访问成员</td>
+<td>和(.)相似，但是左边的操作数可以为空</td>
+</tr>
+</tbody>
+</table>
+<p>举例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">class A &#123;</span><br><span class="line">  var b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void main() &#123;</span><br><span class="line">  /// aobj为A的一个实例</span><br><span class="line">  var aobj = A();</span><br><span class="line">  ///z为空值的变量</span><br><span class="line">  var z=null;</span><br><span class="line">  print(aobj.b);    // null</span><br><span class="line">  print(z?.b);      // null</span><br><span class="line">  print(z.b);       // The getter &apos;b&apos; was called on null.</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Flutter/" rel="tag"># Flutter</a>
+          
+            <a href="/tags/Dart/" rel="tag"># Dart</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/03/Dart从入门到放弃-函数/" rel="next" title="Dart从入门到放弃-函数">
+                <i class="fa fa-chevron-left"></i> Dart从入门到放弃-函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/10/Dart从入门到放弃-流程控制语句/" rel="prev" title="Dart从入门到放弃-流程控制语句">
+                Dart从入门到放弃-流程控制语句 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Bool</p>
+              <p class="site-description motion-element" itemprop="description">Look, eventualy, you'll learn to do that on the inside.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#算术运算符"><span class="nav-number">1.</span> <span class="nav-text">算术运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相等和关系运算符"><span class="nav-number">2.</span> <span class="nav-text">相等和关系运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型测试操作符"><span class="nav-number">3.</span> <span class="nav-text">类型测试操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#赋值操作符"><span class="nav-number">4.</span> <span class="nav-text">赋值操作符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑运算符"><span class="nav-number">5.</span> <span class="nav-text">逻辑运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位和移位运算"><span class="nav-number">6.</span> <span class="nav-text">位和移位运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件表达式"><span class="nav-number">7.</span> <span class="nav-text">条件表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#级联表示法"><span class="nav-number">8.</span> <span class="nav-text">级联表示法 (..)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他运算符"><span class="nav-number">9.</span> <span class="nav-text">其他运算符</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bool</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Swift,Ios,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="简述 在程序员的世界里，如果不能随口丢出几个专业术语；这™还能叫程序员吗？  在大多数人看来，那种满口之乎者也，亦或是一段对话带上两个reference，closure，variable之类的专业词汇，会给人 我这样一种感觉，这个人可能很做作；但在我开始大量接触社科文化之后的半年；我终于意识到了这完全是一种错误的认知。 在知识的领域，很多东西用一段复杂的白话文来描述；是十分痛苦的，我认为这应该也是">
+<meta name="keywords" content="Swift,Ios">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift进阶 - 术语">
+<meta property="og:url" content="varbool.com/2018/08/10/Swift进阶 - 术语/index.html">
+<meta property="og:site_name" content="VarBool">
+<meta property="og:description" content="简述 在程序员的世界里，如果不能随口丢出几个专业术语；这™还能叫程序员吗？  在大多数人看来，那种满口之乎者也，亦或是一段对话带上两个reference，closure，variable之类的专业词汇，会给人 我这样一种感觉，这个人可能很做作；但在我开始大量接触社科文化之后的半年；我终于意识到了这完全是一种错误的认知。 在知识的领域，很多东西用一段复杂的白话文来描述；是十分痛苦的，我认为这应该也是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-12T17:07:56.568Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift进阶 - 术语">
+<meta name="twitter:description" content="简述 在程序员的世界里，如果不能随口丢出几个专业术语；这™还能叫程序员吗？  在大多数人看来，那种满口之乎者也，亦或是一段对话带上两个reference，closure，variable之类的专业词汇，会给人 我这样一种感觉，这个人可能很做作；但在我开始大量接触社科文化之后的半年；我终于意识到了这完全是一种错误的认知。 在知识的领域，很多东西用一段复杂的白话文来描述；是十分痛苦的，我认为这应该也是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="varbool.com/2018/08/10/Swift进阶 - 术语/">
+
+
+
+
+
+  <title>Swift进阶 - 术语 | VarBool</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">VarBool</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">True or False</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="varbool.com/2018/08/10/Swift进阶 - 术语/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bool">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="VarBool">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Swift进阶 - 术语</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-10T10:38:29+08:00">
+                2018-08-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习/" itemprop="url" rel="index">
+                    <span itemprop="name">学习</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><blockquote>
+<p>在程序员的世界里，如果不能随口丢出几个专业术语；这™还能叫程序员吗？</p>
+</blockquote>
+<p>在大多数人看来，那种满口之乎者也，亦或是一段对话带上两个reference，closure，variable之类的专业词汇，会给<del>人</del> 我这样一种感觉，这个人可能很做作；但在我开始大量接触社科文化之后的半年；我终于意识到了这完全是一种错误的认知。</p>
+<p>在知识的领域，很多东西用一段复杂的白话文来描述；是十分痛苦的，我认为这应该也是各种专业术语诞生的初衷。</p>
+<p>Swift进阶作者在开篇就为我们整理了一些常用的Swift高频术语，这里我照搬一些术语，在以后的学习或者工作中我会回过头来删补本篇的常用术语，也希望看到本文的同学们能够咬文嚼字帮忙指出错误与不足。</p>
+<a id="more"></a>
+<h2 id="术语整理"><a href="#术语整理" class="headerlink" title="术语整理"></a>术语整理</h2><p><strong>值（value）：</strong>是不变的，永久的，它从不会改变。比如，1, true 和 [1,2,3] 都是值</p>
+<p><strong>变量 (variable)：</strong>当我们使用var x = [1,2]来对值进行命名的时候，x即为变量，当我们对将x = [1,2,3]时，我们改变的只是x这个变量指向，x指向了[1,2,3]，原来的值[1,2]是不变的</p>
+<p><strong>改变 (mutating)：</strong>当我们将 var x = [1,2] ，由x原来指向[1,2] 变为x = [1,2,3]时，这个过程我们称之为改变</p>
+<p><strong>常量变量 (constant variables)：</strong> 用let声明的常量，我们称之为常量变量，常量变量一旦被赋值，就无法再次赋值了，let x = [1,2] <strong>改变</strong>成 x = [1,2,3]理论上是不成立的</p>
+<p><strong>值类型 (value type)：</strong>我们常见的值类型有结构体(struct)和枚举(emum)，当我们把一个结构体赋值给另一个，那么这两个变量将会包含同样的值。你可以将它理解为内容被复制了一遍，但是更精确地描述 的话，是被赋值的变量与另外的那个变量包含了同样的值</p>
+<p><strong>引用 (reference)：</strong>引用是一种特殊类型的值，他是一个“指向”另一个值的值，在Swift中可能会出现多个引用指向同一个值，这也就导致这个值可能被多个引用改变</p>
+<p><strong>引用类型 (reference type)：</strong>我们不能在一个变量中直接持有一个类的实例，我们只能在变量里面持有对这个类的引用，然后通过引用来访问这个类</p>
+<p><strong>同一性 (identity)：</strong>正是因为类具有同一性，我们才可以用 === 来判定两个变量是否引用了同一个对象，用 == 来判定两个变量的值是否相等(前提是对应类型实现了 == 运算符)</p>
+<p><strong>浅复制 (shallow copy)：</strong>如果我们的结构体中包含有引用类型，在将结构体赋值给 一个新变量时所发生的复制行为中，这些引用类型的内容是不会被自动复制一份的，只有引用 本身会被复制。这种复制的行为被称作浅复制 (shallow copy)。</p>
+<p><strong>高阶函数 (higher-order function):</strong>在 Swift 中，函数也是值。我们可以将一个函数赋值给一个变量，也可以创建一个包含函数的数 组，或者调用变量所持有的函数。如果一个函数接受别的函数作为参数 (比如 map 函数接受一 个转换函数，并将其应用到数组中的所有元素上)，或者一个函数的返回值是函数，那么这样的 函数就叫做高阶函数 (higher-order function)。</p>
+<p><strong>闭包 (closure)：</strong>闭包在我们Swift进行开发时，绝对是一个举足轻重的知识点，函数不需要被声明在最高层级 — 我们可以在一个函数内部声明另一个函数，也可以在一个 do 作 用域或者其他作用域中声明函数。如果一个函数被定义在外层作用域中，但是被传递出这个作 用域 (比如把这个函数被作为其他函数的返回值返回时)，它将能够 “捕获” 局部变量。这些局部 变量将存在于函数中，不会随着局部作用域的结束而消亡，函数也将持有它们的状态。这种行 为的变量被称为 “闭合变量”，我们把这样的函数叫做闭包 (closure)。</p>
+<p><strong>闭包表达式 (closure expression)：</strong>通过 { }来定义函数的方式，通常情况下，我们称之为闭包表达式 (closure expression)</p>
+<p><strong>方法 (method)：</strong>定义在类或者协议中的函数，我们称之为方法</p>
+<p><strong>柯里化函数 (curried function)：</strong>如果一个函数 不是接受多个参数，而是只接受部分参数，然后返回一个接受其余参数的函数的话，那么这个 函数就是一个柯里化函数 (curried function)</p>
+<p><strong>自由函数 (free function)：</strong>有时候我们会把那些不是方法的函数叫做自由函数 (free function)</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Swift/" rel="tag"># Swift</a>
+          
+            <a href="/tags/Ios/" rel="tag"># Ios</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/10/Swift进阶- 序言/" rel="next" title="Swift进阶 - 序言">
+                <i class="fa fa-chevron-left"></i> Swift进阶 - 序言
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/10/Swift进阶-集合类型/" rel="prev" title="Swift进阶 - 集合类型">
+                Swift进阶 - 集合类型 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Bool</p>
+              <p class="site-description motion-element" itemprop="description">Look, eventualy, you'll learn to do that on the inside.</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/yourname" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:yourname@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yourname" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com/yourname" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#简述"><span class="nav-number">1.</span> <span class="nav-text">简述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#术语整理"><span class="nav-number">2.</span> <span class="nav-text">术语整理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bool</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
