@@ -129,18 +129,18 @@
 
 
 
-<meta name="description" content="今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。  在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。下面我们先汇总下Dart中的常见操作符：    描述 操作符     一元后置操作符 expr++   expr–">
+<meta name="description" content="今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。  在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。下面我们先汇总下Dart中的常见操作符：">
 <meta name="keywords" content="Flutter,Dart">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dart从入门到放弃-运算符">
 <meta property="og:url" content="varbool.com/2018/12/04/Dart从入门到放弃-运算符/index.html">
 <meta property="og:site_name" content="VarBool">
-<meta property="og:description" content="今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。  在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。下面我们先汇总下Dart中的常见操作符：    描述 操作符     一元后置操作符 expr++   expr–">
+<meta property="og:description" content="今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。  在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。下面我们先汇总下Dart中的常见操作符：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-10T05:49:29.893Z">
+<meta property="og:updated_time" content="2019-02-02T07:43:14.120Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dart从入门到放弃-运算符">
-<meta name="twitter:description" content="今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。  在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。下面我们先汇总下Dart中的常见操作符：    描述 操作符     一元后置操作符 expr++   expr–">
+<meta name="twitter:description" content="今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。  在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。下面我们先汇总下Dart中的常见操作符：">
 
 
 
@@ -406,6 +406,7 @@
 <p>今天简短的回顾了下进度，必需要加把油了，只剩最后11天了。</p>
 </blockquote>
 <p>在日常开发中，我们会很频繁的使用操作符，这一篇我们就来学习Dar中的操作符。<br>Dart中的操作符跟我目前所接触到所有计算机语言相比起来，最让我意外的是Dart中的操作符许多都是可以重写的(刚开始我还以为是是翻译出错了)。<br>下面我们先汇总下Dart中的常见操作符：</p>
+<a id="more"></a>
 <table>
 <thead>
 <tr>
@@ -480,7 +481,6 @@
 </tr>
 </tbody>
 </table>
-<a id="more"></a>
 <p>我们先列举一些Dart中常见的运算符表达式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a++</span><br><span class="line">a + b</span><br><span class="line">a = b</span><br><span class="line">a == b</span><br><span class="line">c ? a : b</span><br><span class="line">a is T</span><br></pre></td></tr></table></figure></p>
 <p>上面的表达式中，每一个运算符的优先级都是高于排在自己后面的运算符的，比如<code>a == b ? c : d</code>会优先去判断a是否等于b，最后才能得出值是c还是d。</p>
 <h2 id="算术运算符"><a href="#算术运算符" class="headerlink" title="算术运算符"></a>算术运算符</h2><p>Dart中常用的算术运算符有下表几种：</p>
@@ -851,7 +851,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
